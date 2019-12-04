@@ -13,7 +13,7 @@
         class="number-animate-dot"
         :key="index"
         :style="{height: `${pHeight}px`}"
-      >{{setting.symbol}}</div>
+      ><span class="dot">{{setting.symbol}}</span></div>
     </template>
   </div>
 </template>
@@ -135,6 +135,9 @@ export default {
   .number-animate-dot
     width: 16px
     float: left
+    position relative
     text-align: center
-    // background: red
+    .dot
+      position absolute
+      bottom 0
 </style>
