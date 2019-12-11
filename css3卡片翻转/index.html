@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>css3卡片翻转demo</title>
+  <style>
+    .box {
+      position: relative;
+    }
+    .box div {
+      height: 300px;
+      text-align: center;
+      line-height: 300px;
+      border: 1px solid pink;
+      width: 200px;
+      position: absolute;
+      font-size: 40px;
+      left: 0px;
+      color: #fff;
+      top: 0px;
+      transition: all 0.4s ease 0s;
+      -webkit-transition: all 0.4s ease 0s;
+      -moz-transition: all 0.4s ease 0s;
+      -o-transition: all 0.4s ease 0s;
+      /* 隐藏背面 */
+      backface-visibility: hidden;
+    }
+    .box div:first-child {
+      background: red;
+      transform: rotateY(0deg)
+    }
+    .box div:last-child {
+      background: blue;
+      transform: rotateY(180deg)
+    }
+    /* 翻转加一个class */
+    .box.turn div:first-child {
+      transform: rotateY(-180deg);
+    }
+    .box.turn div:last-child {
+      transform: rotateY(0deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box turnboxs">
+    <div>正</div>
+    <div>反</div>
+  </div>
+  <script>
+    document.querySelector('.turnboxs').onclick = function () {
+      this.classList.toggle('turn')
+      return false
+    }
+  </script>
+</body>
+
+</html>
